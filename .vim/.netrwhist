@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/rajeev/NCSU/Sem1/Algo/homeWork/2'
+let g:netrw_dirhist_2='/home/rajeev/NCSU/Sem1/Algo/homeWork/2/1'
+let g:netrw_dirhist_3='/home/rajeev/NCSU/Sem1/Algo/homeWork/2'
+let g:netrw_dirhist_4='/home/rajeev/NCSU/Sem1/Algo/homeWork/2/2'
