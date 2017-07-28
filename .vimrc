@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-airline/vim-airline'
 
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -118,3 +119,4 @@ let g:ctrlp_working_path_mode = 0
 set wildignore+=*/build/**
 
 let g:airline_theme='minimalist'
+

@@ -9,13 +9,14 @@ syntax on
 :color elflord
 
 " For the status line
-set laststatus=2
-set statusline=
-set statusline+=%7*\[%n]                                  "buffernr
-set statusline+=%1*\ %<%F\                                "File+path
-set statusline+=%2*\ %y\                                  "FileType
-set statusline+=%8*\ %=\ Line:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=%9*\ Column:%03c\                            "Colnr
+"set laststatus=2
+"set statusline=
+"set statusline+=%7*\[%n]                                  "buffernr
+"set statusline+=%1*\ %<%F\                                "File+path
+"set statusline+=%2*\ %y\                                  "FileType
+"set statusline+=%8*\ %=\ Line:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%9*\ Column:%03c\                            "Colnr
+
 
 set history=100
 set backspace=indent,eol,start
