@@ -17,6 +17,7 @@ syntax on
 "set statusline+=%8*\ %=\ Line:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 "set statusline+=%9*\ Column:%03c\                            "Colnr
 
+
 set history=100
 set backspace=indent,eol,start
 set scrolloff=5
@@ -80,8 +81,8 @@ if exists("+showtabline")
     highlight link TabNum Special
 endif
 
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 set wildmode=longest,list,full
 set wildmenu

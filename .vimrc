@@ -11,6 +11,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'Yggdroot/LeaderF'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +51,7 @@ source ~/.vim/cscope.vim
 set nocscopeverbose 
 
 " Py Mode
+let g:pymode_options_max_line_length = 85
 let g:pymode_lint_checkers = ['pylint']
 let g:pymode_rope = 0
 let g:pymode_lint_on_write=0
@@ -56,13 +63,16 @@ let g:ctrlp_by_filename = 1
 " Syntax related
 source ~/.vim/syntax/format.vim
 
+" TagBar
+let g:tagbar_sort = 0
+
 "Mappings
 :nnoremap <F2> :LeaderfFile<CR>
 nnoremap <F3> :bp<CR>
 nnoremap <F4> :bn<CR>
-"nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> :e #<CR>
-":nnoremap <F7> :source ~/.vimrc <CR>
+:nnoremap <F7> :source ~/.vimrc <CR>
 nmap <F8> :TagbarToggle<CR>
 
 nnoremap <silent> <Leader>1 1gt
@@ -107,3 +117,6 @@ let g:ctrlp_working_path_mode = 0
 
 " Ignore these directories
 set wildignore+=*/build/**
+
+let g:airline_theme='minimalist'
+
