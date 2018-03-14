@@ -16,6 +16,8 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-airline/vim-airline'
+Plugin 'mileszs/ack.vim'
+Plugin 'maralla/completor.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -120,3 +122,11 @@ set wildignore+=*/build/**
 
 let g:airline_theme='minimalist'
 
+"vimdiff
+hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
+hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
+
+"completor
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
