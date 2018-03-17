@@ -58,6 +58,7 @@ let g:pymode_lint_checkers = ['pylint']
 let g:pymode_rope = 0
 let g:pymode_lint_on_write=0
 "let mapleader = ","
+let g:pymode_lint_ignore = "E0611,F0401,C0111,I0011,W0403,R0201,W0511,C0302"
 
 " Cntrl P
 let g:ctrlp_by_filename = 1
@@ -95,7 +96,7 @@ nnoremap <silent> <Leader>s :tab split<CR>
 nnoremap <silent> <Leader>t :tabnew<Space>
 nnoremap <silent> <Leader>w :vim /<c-r>='\V'.escape(expand("<cword>"), '/\')<CR>"<CR>/g ./../*/*<CR>
 
-nnoremap <leader>p :PymodeLint<cr>    "pressing ,p will run plyint on current buffer
+nnoremap <leader>p :PymodeLint<cr>    
 
 nnoremap n nzz
 nnoremap N Nzz
@@ -130,3 +131,5 @@ hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
+let g:pymode_lint_ignore = "E0611,F0401,C0111,I0011,W0403,R0201,W0511,C0302"
