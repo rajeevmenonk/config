@@ -9,15 +9,27 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
+"Plugin 'FelikZ/ctrlp-py-matcher'
+"Plugin 'python-mode/python-mode'
+"Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-python/python-syntax'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'maralla/completor.vim'
+"Plugin 'ajh17/VimCompletesMe'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'benmills/vimux'
+Plugin 'tibabit/vim-templates'
+Plugin 'bazelbuild/vim-ft-bzl'
+Plugin 'jkramer/vim-checkbox'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'Valloric/YouCompleteMe'
 
 
 " All of your Plugins must be added before the following line
@@ -53,12 +65,18 @@ source ~/.vim/cscope.vim
 set nocscopeverbose 
 
 " Py Mode
+let g:pymode_python = 'python2'
 let g:pymode_options_max_line_length = 85
 let g:pymode_lint_checkers = ['pylint']
 let g:pymode_rope = 0
 let g:pymode_lint_on_write=0
 "let mapleader = ","
 let g:pymode_lint_ignore = "E0611,F0401,C0111,I0011,W0403,R0201,W0511,C0302"
+let g:pymode_rope_lookup_project = 0
+"let g:syntastic_python_checkers = ['']
+
+"syntastic
+let g:syntastic_python_checker_args='flake8 --ignore=E0611,F0401,C0111,I0011,W0403,R0201,W0511,C0302'
 
 " Cntrl P
 let g:ctrlp_by_filename = 1
@@ -88,13 +106,15 @@ nnoremap <silent> <Leader>7 7gt
 nnoremap <silent> <Leader>8 8gt
 nnoremap <silent> <Leader>9 9gt
 nnoremap <silent> <Leader>a :NERDTree<CR>
-nnoremap <silent> <Leader>b :bufdo tab split<CR>
+" nnoremap <silent> <Leader>b :bufdo tab split<CR>
 nnoremap <silent> <Leader>o :cp<CR>
 nnoremap <silent> <Leader>n :cn<CR>
 nnoremap <silent> <Leader>q :vim /<c-r>=expand("<cword>")<CR>/g ./../*/*<CR>
 nnoremap <silent> <Leader>s :tab split<CR>
 nnoremap <silent> <Leader>t :tabnew<Space>
 nnoremap <silent> <Leader>w :vim /<c-r>='\V'.escape(expand("<cword>"), '/\')<CR>"<CR>/g ./../*/*<CR>
+nnoremap <silent> <Leader>c :tabclose <CR>
+nnoremap <Leader>r :VimuxPromptCommand<CR>
 
 nnoremap <leader>p :PymodeLint<cr>    
 
@@ -110,6 +130,8 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+map Q <Nop>
+map <F1> <Nop>
 
 ":helptags ~/.vim/doc/
 "let g:ctrlp_user_command = 'find %s -name "*.py"'
@@ -133,3 +155,18 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 let g:pymode_lint_ignore = "E0611,F0401,C0111,I0011,W0403,R0201,W0511,C0302"
+
+"Python syntax
+let g:python_highlight_all = 1
+let g:python_slow_sync = 0
+
+let @b = "Oimport pdb; pdb.set_trace()"
+:set nu
+
+" Use tab to trigger completion
+let g:completor_auto_trigger = 0
+inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
+" Vim Templates
+let g:tmpl_search_paths = ['/Users/rajeev/dev/scripts/vim-templates']
+"nnoremap <silent> <Leader>l :TemplateInit py <CR>

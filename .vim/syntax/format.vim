@@ -81,8 +81,10 @@ if exists("+showtabline")
     highlight link TabNum Special
 endif
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+highlight ColorColumn ctermbg=gray
+set colorcolumn=86
 
 set wildmode=longest,list,full
 set wildmenu
