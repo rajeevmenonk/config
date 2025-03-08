@@ -40,7 +40,20 @@ Plugin 'bazelbuild/vim-ft-bzl'
 
 " Make checkboxes and close them
 Plugin 'jkramer/vim-checkbox'
+Plugin 'nathanalderson/yang.vim'
 
+" XML Parser
+" Plugin 'othree/xml.vim'
+Plugin 'adelarsq/vim-matchit'
+
+" POC
+"Plugin 'ervandew/supertab'
+"Plugin 'metalelf0/supertab'
+Plugin 'tpope/vim-dispatch'
+Plugin 'github/copilot.vim'
+Plugin 'rust-lang/rust.vim'
+
+" DONE
 " Search code. Replacement for grep. Dont see it being used.
 "Plugin 'mileszs/ack.vim'
 
@@ -96,7 +109,8 @@ source ~/.vim/plugin_configs/config_completer.vim
 source ~/.vim/plugin_configs/config_tagbar.vim
 " tibabit/vim-templates
 source ~/.vim/plugin_configs/config_vim_templates.vim
-
+" 'dense-analysis/ale'
+source ~/.vim/plugin_configs/config_ale.vim
 " Configs of disabled plugins
 " FelikZ/ctrlp-py-matcher
 " source ~/.vim/plugin_configs/config_cntrlp_py_matcher.vim
@@ -121,3 +135,6 @@ source ~/.vim/mappings.vim
 " Ignore these directories
 set wildignore+=*/build/**
 set nu
+
+" leaderf plugin
+let g:Lf_UseCache = 0

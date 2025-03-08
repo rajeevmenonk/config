@@ -6,7 +6,7 @@
 set shiftwidth=4
 set expandtab
 syntax on
-:color elflord
+":color elflord
 
 " For the status line
 "set laststatus=2
@@ -89,3 +89,19 @@ set colorcolumn=86
 set wildmode=longest,list,full
 set wildmenu
 
+filetype on
+if has('autocmd')
+    filetype plugin indent on
+    autocmd BufEnter *.tac source ~/.vim/tacc.vim
+endif
+
+augroup filetypedetect
+    au BufRead,BufNewFile *.tin setfiletype cpp
+    au BufRead,BufNewFile *.tpp setfiletype cpp
+    " associate *.tin with cpp filetype
+augroup END
+au BufRead,BufNewFile *.tpp setfiletype cpp
+
+" Raise spelling mistakes
+" :set spell spelllang=en_us
+set background=dark

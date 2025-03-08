@@ -29,6 +29,9 @@ nnoremap <Leader>r :VimuxPromptCommand<CR>
 
 nnoremap <leader>p :PymodeLint<cr>
 
+nnoremap <silent> <Leader>g :set spell spelllang=en_us<CR>
+nnoremap <silent> <Leader>g! :set spell!<CR>
+
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
@@ -52,3 +55,9 @@ inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<C
 
 let @a = "Ofrom systest_runner.utils import APdb; APdb().set_trace()"
 let @b = "Oimport pdb; pdb.set_trace()"
+
+" Strikethrough -  TODO
+" xnoremap <silent> <Leader>x a<C-V>u0336<Esc><Space>
+
+" Fix the backspace madness
+noremap! <C-?> <C-h>
